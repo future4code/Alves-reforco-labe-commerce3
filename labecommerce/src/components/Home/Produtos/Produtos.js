@@ -1,7 +1,7 @@
 import React from 'react'
 import { Cabecalho, GrupoDeCartoes } from './style'
 import CartaoDosProdutos from '../CartaoDosProdutos/CartaoDosProdutos'
-import { pacoteDeProdutos } from '../../../pacoteDeProdutos'
+// import { pacoteDeProdutos } from '../../../pacoteDeProdutos'
 
 
 
