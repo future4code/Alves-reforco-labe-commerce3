@@ -3,7 +3,7 @@ import { Cabecalho, GrupoDeCartoes } from './style'
 import CartaoDosProdutos from '../CartaoDosProdutos/CartaoDosProdutos'
 import Filtros from '../../Filtros/Filtros'
 import { pacoteDeProdutos } from '../../../pacoteDeProdutos'
-
+import { useState } from 'react'
 
 
 
@@ -43,20 +43,14 @@ function Produtos(props) {
           return primeiroParametro.name.localeCompare(segundoParametro.name)
       }
     })
-    .sort(() => {
-      if (ordenacao === "asc") {
-        return 0
-      } else {
-        return -1
-      }
-    })
-    .map(produto => {
+
+    const produtosMapeados = produtosOrdenados && produtosOrdenados.map(produto => {
       return <CartaoDosProdutos
         key={produto.id}
         imagem={produto.photo}
         nome={produto.name}
         valor={produto.price}
-        onClick={() => props.onClick(produto)}
+        onClick={() => props.onclick(produto)}
       />
     })
 
