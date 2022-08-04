@@ -56,7 +56,6 @@ function App() {
       setCarrinho(carrinho.filter((produto) => id !== produto.id));
     }
   };
-
   return (
     <div>
       <Produtos
