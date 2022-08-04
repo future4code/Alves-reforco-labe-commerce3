@@ -2,7 +2,7 @@ import React from 'react'
 import { Cabecalho, GrupoDeCartoes } from './style'
 import CartaoDosProdutos from '../CartaoDosProdutos/CartaoDosProdutos'
 import { pacoteDeProdutos } from '../../../pacoteDeProdutos'
-
+import { useState } from 'react'
 
 
 
@@ -17,14 +17,14 @@ function Produtos(props) {
         
             
     })
-    console.log(produtosOrdenados)
+
     const produtosMapeados = produtosOrdenados && produtosOrdenados.map(produto =>{
         return <CartaoDosProdutos 
                     key = {produto.id}
                     imagem = {produto.photo}
                     nome = {produto.name}
                     valor = {produto.price}
-                    onClick = {() => props.onClick(produto)}
+                    onClick = {() => props.onclick(produto)}
                 
         
         />
