@@ -25,6 +25,7 @@ function Produtos(props) {
                     nome = {produto.name}
                     valor = {produto.price}
                     onClick = {() => props.onClick(produto)}
+                
         
         />
     })

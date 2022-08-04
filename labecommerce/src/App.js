@@ -2,6 +2,7 @@ import React from "react";
 import Produtos from "./components/Home/Produtos/Produtos";
 import { useState } from "react";
 import { pacoteDeProdutos } from "./pacoteDeProdutos";
+import Filtros from "./Componentes/Filtros/Filtros";
 
 function App() {
   const [ordenacao, setOrdenacao]=useState("Crescente")
@@ -25,6 +26,8 @@ function App() {
         produtos = {pacoteDeProdutos}
         onclick ={adicionarProdutoNoCarrinho}
       />
+      <p>LabEcommerce</p>
+      <Filtros/>
     </div>
   );
 }
