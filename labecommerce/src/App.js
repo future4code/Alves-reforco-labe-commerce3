@@ -2,7 +2,6 @@ import React from "react";
 import Produtos from "./components/Home/Produtos/Produtos";
 import { useState } from "react";
 import { pacoteDeProdutos } from "./pacoteDeProdutos";
-import Filtros from "./Componentes/Filtros/Filtros";
 import Carrinho from "./components/Home/Carrinho/Carrinho";
 
 function App() {
@@ -67,7 +66,6 @@ function App() {
       />
       <p>LabEcommerce</p>
       <Carrinho produtos={carrinho} remove={removeProdutoCarrinho} />
-      <Filtros />
     </div>
   );
 }
