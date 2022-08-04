@@ -24,7 +24,8 @@ function Produtos(props) {
                     imagem = {produto.photo}
                     nome = {produto.name}
                     valor = {produto.price}
-                    onClick = {() => console.log(produto.name)}
+                    onClick = {() => props.onClick(produto)}
+                
         
         />
     })
