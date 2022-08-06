@@ -11,19 +11,19 @@ function Produtos(props) {
   const [precoMinimo, setPrecoMinimo] = useState(-Infinity)
   const [precoMaximo, setPrecoMaximo] = useState(Infinity)
   const [titulo, setTitulo] = useState("name")
-  const [ordenacao, setOrdenacao] = useState("asc")
+ 
 
 
   const produtosOrdenados = props.produtos && props.produtos.sort((a, b) => {
     if (props.ordenacao === "Crescente") {
-      return (a.price - b.price)
+      return a.price - b.price
     } else {
-      return (b.price - a.price)
+      return b.price - a.price
     }
 
 
   })
-  console.log(produtosOrdenados)
+  
   const produtosMapeados = produtosOrdenados && produtosOrdenados
     .filter((produto) => {
       return produto.name.includes(pesquisa)
@@ -53,9 +53,18 @@ function Produtos(props) {
 
   return (
 
-    <div>
+     <div>
       <Cabecalho>
         <p>Quantidade de produtos: {props.quantidade}</p>
+        <label>
+            Ordenação:
+            <select onChange={props.onChangeCabecalho}>
+              <option value={"Crescente"} >Crescente</option>
+              <option value={"Decrescente"}>Decrescente</option>
+
+
+            </select>
+        </label>
 
       </Cabecalho>
       <div>
@@ -63,7 +72,7 @@ function Produtos(props) {
           {produtosMapeados}
         </GrupoDeCartoes>
       </div>
-      <Filtros
+      {/* <Filtros
         pesquisa={pesquisa}
         setPesquisa={setPesquisa}
         precoMinimo={precoMinimo}
@@ -74,7 +83,7 @@ function Produtos(props) {
         setOrdenacao={setOrdenacao}
         titulo={titulo}
         setTitulo={setTitulo}
-      />
+      /> */}
     </div>
   )
 }
